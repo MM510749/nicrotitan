@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Priorities for the Uzbekistan Meeting</title>
+<style>
+  :root{
+    --bg:#f6f6f3;
+    --surface:#ffffff;
+    --ink:#0f172a;
+    --ink-2:#475569;
+    --ink-3:#94a3b8;
+    --border:#e8eaef;
+    --border-soft:#f1f3f6;
+    --proceed:#047857;
+    --proceed-bg:#ecfdf5;
+    --proceed-edge:#a7f3d0;
+    --pass:#b91c1c;
+    --pass-bg:#fef2f2;
+    --pass-edge:#fecaca;
+    --shadow-sm:0 1px 2px rgba(15,23,42,.04);
+    --shadow:0 4px 14px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.04);
+    --radius:16px;
+  }
+  .t-teal   {--tone:#0d9488;--tone-bg:#f0fdfa;--tone-edge:#99f6e4}
+  .t-indigo {--tone:#4f46e5;--tone-bg:#eef2ff;--tone-edge:#c7d2fe}
+  .t-rose   {--tone:#e11d48;--tone-bg:#fff1f2;--tone-edge:#fecdd3}
+  .t-amber  {--tone:#d97706;--tone-bg:#fffbeb;--tone-edge:#fde68a}
+  .t-violet {--tone:#7c3aed;--tone-bg:#f5f3ff;--tone-edge:#ddd6fe}
+  .t-slate  {--tone:#475569;--tone-bg:#f1f5f9;--tone-edge:#cbd5e1}
+  .t-emerald{--tone:#059669;--tone-bg:#ecfdf5;--tone-edge:#a7f3d0}
+
+  *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    background-image:linear-gradient(180deg,#faf9f6 0%,#f4f3ef 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",system-ui,sans-serif;
+    font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:22px 16px 80px}
+
+  .hero{margin-bottom:6px}
+  .hero .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+  .hero h1{font-size:1.7rem;font-weight:700;line-height:1.2;letter-spacing:-.02em;margin:0 0 6px}
+  .hero .meta{font-size:.9rem;color:var(--ink-2)}
+
+  .nav-strip{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,246,243,.85);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    margin:18px -16px 18px;
+    padding:12px 16px;
+    border-top:1px solid var(--border-soft);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .nav-scroll::-webkit-scrollbar{display:none}
+
+  .nav-btn{
+    flex:none;cursor:pointer;font-family:inherit;
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:9px 13px;display:flex;align-items:center;gap:9px;
+    font-size:.85rem;font-weight:600;color:var(--ink-2);
+    transition:all .2s ease;white-space:nowrap;
+  }
+  .nav-btn .ico{width:17px;height:17px;color:var(--ink-3);transition:color .2s ease;flex:none}
+  .nav-btn .num-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:19px;height:19px;border-radius:6px;background:var(--border-soft);
+    color:var(--ink-3);font-size:.7rem;font-weight:700;transition:all .2s ease;
+  }
+  .nav-btn .v-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .nav-btn .v-dot.proceed{background:var(--proceed)}
+  .nav-btn .v-dot.pass{background:var(--pass)}
+  .nav-btn.active{background:var(--tone-bg);border-color:var(--tone-edge);color:var(--tone);box-shadow:var(--shadow-sm)}
+  .nav-btn.active .ico{color:var(--tone)}
+  .nav-btn.active .num-badge{background:var(--tone);color:#fff}
+
+  .panel{display:none;animation:slideUp .35s cubic-bezier(.2,.7,.2,1)}
+  .panel.active{display:block}
+  @keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .card-header{
+    padding:22px 20px 18px;
+    border-bottom:1px solid var(--border-soft);
+    background:linear-gradient(180deg,var(--tone-bg) 0%,transparent 100%);
+  }
+  .card-header .row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .icon-box{
+    flex:none;width:50px;height:50px;border-radius:13px;
+    background:#fff;border:1px solid var(--tone-edge);color:var(--tone);
+    display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);
+  }
+  .icon-box svg{width:24px;height:24px}
+  .title-block{flex:1;min-width:0}
+  .num-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tone);margin-bottom:3px}
+  .card-header h2{font-size:1.28rem;font-weight:700;line-height:1.25;margin:0;letter-spacing:-.01em}
+
+  .verdict{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:8px 14px;border-radius:999px;
+    font-size:.78rem;font-weight:600;letter-spacing:.02em;
+  }
+  .verdict.proceed{background:#fff;color:var(--proceed);border:1px solid var(--proceed-edge)}
+  .verdict.pass{background:#fff;color:var(--pass);border:1px solid var(--pass-edge)}
+  .verdict svg{width:14px;height:14px}
+
+  .card-body{padding:6px 20px 22px}
+
+  .section-label{
+    font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-3);margin:18px 0 4px;padding-top:12px;
+    border-top:1px solid var(--border-soft);
+  }
+  .section-label:first-child{border-top:none;padding-top:14px;margin-top:4px}
+
+  .items{list-style:none;margin:0;padding:0}
+  .items li{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--border-soft)}
+  .items li:last-child{border-bottom:none;padding-bottom:4px}
+  .bullet{
+    flex:none;width:26px;height:26px;border-radius:8px;
+    background:var(--tone-bg);color:var(--tone);border:1px solid var(--tone-edge);
+    display:flex;align-items:center;justify-content:center;
+    font-size:.78rem;font-weight:700;margin-top:1px;
+  }
+  .bullet.q{background:#fff}
+  .item-content{flex:1;min-width:0;font-size:.94rem;color:var(--ink-2);line-height:1.6}
+  .item-content strong{color:var(--ink);font-weight:650;display:block;margin-bottom:2px}
+
+  .indicators-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat{
+    background:#fff;border:1px solid var(--border);border-radius:12px;
+    padding:14px;box-shadow:var(--shadow-sm);
+  }
+  .stat .label{
+    font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:6px;line-height:1.35;
+  }
+  .stat .value{font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.01em}
+  .footnote{margin-top:14px;font-size:.78rem;color:var(--ink-3);font-style:italic;text-align:center}
+
+  @media (max-width:420px){
+    .wrap{padding:18px 14px 60px}
+    .hero h1{font-size:1.42rem}
+    .nav-strip{margin:16px -14px 16px;padding:11px 14px}
+    .card-header{padding:18px 16px 14px}
+    .card-header h2{font-size:1.12rem}
+    .icon-box{width:46px;height:46px}
+    .icon-box svg{width:22px;height:22px}
+    .card-body{padding:4px 16px 18px}
+    .item-content{font-size:.9rem}
+    .indicators-grid{gap:8px}
+    .stat{padding:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="eyebrow">Investment Brief</div>
+  <h1>Priorities for the Uzbekistan Meeting</h1>
+  <div class="meta">6 projects · screening verdicts · key indicators</div>
+</div>
+
+<nav class="nav-strip">
+  <div class="nav-scroll">
+    <button class="nav-btn t-teal active" data-t="p1">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 19a2 2 0 001.7 3h11.6a2 2 0 001.7-3L14 9V3M7 14h10"/></svg>
+      <span class="num-badge">1</span>Caustic Soda<span class="v-dot proceed"></span>
+    </button>
+    <button class="nav-btn t-indigo" data-t="p2">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      <span class="num-badge">2</span>Naganman PPP<span class="v-dot proceed"></span>
+    </button>
+    <button class="nav-btn t-rose" data-t="p3">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M13 9h.01M9 13h.01M13 13h.01M9 17h.01M13 17h.01"/></svg>
+      <span class="num-badge">3</span>SILQ Plaza<span class="v-dot pass"></span>
+    </button>
+    <button class="nav-btn t-amber" data-t="p4">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M10 21V3h4v18M10 7h4M10 11h4M10 15h4"/></svg>
+      <span class="num-badge">4</span>Paxtakor<span class="v-dot pass"></span>
+    </button>
+    <button class="nav-btn t-violet" data-t="p5">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20M2 17v-5a2 2 0 012-2h12a2 2 0 012 2v5M2 17v3M22 17v3M6 10V7h6v3"/></svg>
+      <span class="num-badge">5</span>AKFA Hotel<span class="v-dot pass"></span>
+    </button>
+    <button class="nav-btn t-slate" data-t="p6">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M12 7v10M14 9h-3a1.5 1.5 0 000 3h2a1.5 1.5 0 010 3h-3"/></svg>
+      <span class="num-badge">6</span>$600M Tower<span class="v-dot pass"></span>
+    </button>
+    <button class="nav-btn t-emerald" data-t="p7">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
+      <span class="num-badge">★</span>Indicators
+    </button>
+  </div>
+</nav>
+
+<section class="panel active t-teal" id="p1">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 19a2 2 0 001.7 3h11.6a2 2 0 001.7-3L14 9V3M7 14h10"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 01</div><h2>Caustic Soda</h2></div>
+      </div>
+      <span class="verdict proceed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Proceed to DD — conditional</span>
+    </header>
+    <div class="card-body">
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Demand gap exists but is fragile</strong>Uzbekistan imported ~$43M (~57kt) in 2023; proposed 50kt plant fills most of the gap. However, expansion by Navoiazot could eliminate the deficit by commissioning → risk of immediate oversupply.</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>No export fallback</strong>Doubly landlocked, bulk commodity; Kazakhstan is the only viable outlet and is developing competing capacity → domestic demand is the sole revenue driver.</div></li>
+        <li><span class="bullet">3</span><div class="item-content"><strong>Critical byproduct exposure</strong>Chlorine (~37% of revenue) has no secured offtake or integration → material revenue at risk without downstream strategy. Will vertical integration be part of the project — PV plant?</div></li>
+        <li><span class="bullet">4</span><div class="item-content"><strong>Unresolved technical inputs</strong>No clarity on water demineralization or salt purity (core to membrane electrolysis) → execution risk at process level.</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-indigo" id="p2">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 02</div><h2>Naganman Airport PPP</h2></div>
+      </div>
+      <span class="verdict proceed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Proceed to DD — conditional</span>
+    </header>
+    <div class="card-body">
+      <div class="section-label">Key Considerations</div>
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Mid-tier LCC airport</strong>Serves the Fergana Valley (~12M population, ~⅓ of Uzbekistan) and has a structural reliance on air travel. The Fergana Valley is in the far eastern periphery of Uzbekistan, geographically opposite to Samarkand, which sits in the country's central-western corridor. Its traffic is expected to grow from ~0.75M to ~3.4M by 2045, supported by population growth and aviation expansion.</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>Highly fragmented competitive cluster (critical risk)</strong>Within ~100 km radius, Namangan directly overlaps with 3 competing airports: Fergana International Airport, Andijan Airport, and Osh Airport (Kyrgyzstan) — all serving the same catchment; notably, Osh is already the dominant regional hub (~1.2M passengers) and expanding to >5M capacity.</div></li>
+        <li><span class="bullet">3</span><div class="item-content"><strong>CAREC-driven consolidation risk (binary outcome)</strong>Central Asia Regional Economic Cooperation Program explicitly recommends avoiding fragmented, subscale aviation systems and moving toward one primary hub; under this logic, only one airport in the cluster remains. Unless Namangan airport is chosen as the regional hub airport in Fergana Valley, the model falls.</div></li>
+        <li><span class="bullet">4</span><div class="item-content"><strong>PPP structure with private upside</strong>~$150M private investment under a 20-year PPP (2-year build + 18-year operation), focused on terminal and commercial revenues, while government retains sovereign airside functions (runway, ATC), limiting infrastructure risk.</div></li>
+        <li><span class="bullet">5</span><div class="item-content"><strong>Returns conditional on hub designation and traffic diversion</strong>~20% IRR and ~7-year payback rely heavily on passenger growth and diversion from Osh, which is only achievable if Namangan is selected as the dominant hub; without this, the asset risks becoming subscale with capped growth.</div></li>
+      </ul>
+      <div class="section-label">Open Questions</div>
+      <ul class="items">
+        <li><span class="bullet q">?</span><div class="item-content"><strong>Hub designation</strong>Which airport is designated as the primary hub for the Fergana Valley in the national aviation strategy, and can you explicitly confirm whether Namangan is that airport?</div></li>
+        <li><span class="bullet q">?</span><div class="item-content"><strong>Airline commitment</strong>What binding or advanced commitments exist today from airlines to support the traffic ramp-up, and how much of the projected growth is already secured versus assumed?</div></li>
+        <li><span class="bullet q">?</span><div class="item-content"><strong>Competitive protection</strong>What specific measures are in place to ensure airlines prioritize Namangan over competing airports, particularly Osh International Airport?</div></li>
+        <li><span class="bullet q">?</span><div class="item-content"><strong>Downside protection</strong>In a scenario where traffic underperforms, what contractual mechanisms are in place to protect investor returns (e.g., minimum revenue, tariff flexibility, or government support)?</div></li>
+        <li><span class="bullet q">?</span><div class="item-content"><strong>Sponsors</strong>Please highlight the track record of Blue Five Capital, Hyper Partners, Chinese investors as well as the operators for the Project?</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-rose" id="p3">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M13 9h.01M9 13h.01M13 13h.01M9 17h.01M13 17h.01"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 03</div><h2>SILQ Plaza (Amir Temur Square)</h2></div>
+      </div>
+      <span class="verdict pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pass</span>
+    </header>
+    <div class="card-body">
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Prime CBD location</strong>Multi-tower mixed-use concept located in Tashkent's economic and symbolic center, prime central business district (CBD) location (Amir Temur Square).</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>Office oversupply</strong>Class A vacancies in Tashkent already stand at 40.7%.</div></li>
+        <li><span class="bullet">3</span><div class="item-content"><strong>Zoning &amp; political overlay</strong>Pedestrianization plans, UNESCO heritage constraints.</div></li>
+        <li><span class="bullet">4</span><div class="item-content"><strong>Execution risk</strong>Leasing and tenant mix risk; returns highly sensitive to entry price.</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-amber" id="p4">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M10 21V3h4v18M10 7h4M10 11h4M10 15h4"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 04</div><h2>Tashkent Paxtakor Supertall Tower</h2></div>
+      </div>
+      <span class="verdict pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pass</span>
+    </header>
+    <div class="card-body">
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Strong location, weak market</strong>Strong location, but oversupplied office market + demand migration to New Tashkent.</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>Structurally un-investable</strong>Un-investable without government-backed tenancy + single-asset exposure.</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-violet" id="p5">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20M2 17v-5a2 2 0 012-2h12a2 2 0 012 2v5M2 17v3M22 17v3M6 10V7h6v3"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 05</div><h2>AKFA Hotel</h2></div>
+      </div>
+      <span class="verdict pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pass</span>
+    </header>
+    <div class="card-body">
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Strong sector, two structural risks</strong>Tourism sector has shown strong performance over the past years; but 2 structural risks remain: weak demand quality (82.5% of arrivals are low-spending regional tourists) and a significant supply pipeline (Tashkent has 32 hotel projects (~5,035 rooms) in the pipeline).</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>Brutal seasonality in heritage cities</strong>30% Low, 95% high.</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-slate" id="p6">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M12 7v10M14 9h-3a1.5 1.5 0 000 3h2a1.5 1.5 0 010 3h-3"/></svg></div>
+        <div class="title-block"><div class="num-label">Project 06</div><h2>Tashkent $600M Tower</h2></div>
+      </div>
+      <span class="verdict pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Pass</span>
+    </header>
+    <div class="card-body">
+      <ul class="items">
+        <li><span class="bullet">1</span><div class="item-content"><strong>Concept-driven</strong>No disclosed financials, no anchor tenants.</div></li>
+        <li><span class="bullet">2</span><div class="item-content"><strong>Trophy-asset overpricing risk</strong></div></li>
+        <li><span class="bullet">3</span><div class="item-content"><strong>Concentration risk</strong>Exposure to single-asset, single-location risk.</div></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="panel t-emerald" id="p7">
+  <article class="card">
+    <header class="card-header">
+      <div class="row">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg></div>
+        <div class="title-block"><div class="num-label">Country Snapshot</div><h2>Uzbekistan — Key Indicators</h2></div>
+      </div>
+    </header>
+    <div class="card-body">
+      <div class="indicators-grid">
+        <div class="stat"><div class="label">Population (2025)</div><div class="value">~37.1M</div></div>
+        <div class="stat"><div class="label">GDP growth (2025)</div><div class="value">~7.6% (Q3)</div></div>
+        <div class="stat"><div class="label">GDP per capita (2024)</div><div class="value">$3,162</div></div>
+        <div class="stat"><div class="label">Inflation (2025)</div><div class="value">7.3–7.8%</div></div>
+        <div class="stat"><div class="label">Central Bank rate</div><div class="value">14%</div></div>
+        <div class="stat"><div class="label">International reserves</div><div class="value">$49.7B</div></div>
+        <div class="stat"><div class="label">Fitch rating</div><div class="value">BB (Stable)</div></div>
+        <div class="stat"><div class="label">S&amp;P rating</div><div class="value">BB (Stable) — Nov '25</div></div>
+        <div class="stat"><div class="label">Moody's rating</div><div class="value">Ba3 (Positive)</div></div>
+        <div class="stat"><div class="label">CPI 2024</div><div class="value">32/100 · 121/180</div></div>
+        <div class="stat"><div class="label">Rule of Law 2024</div><div class="value">Rank 83/142</div></div>
+        <div class="stat"><div class="label">Economic Freedom 2025</div><div class="value">108/180 · Mostly Unfree</div></div>
+        <div class="stat"><div class="label">Press Freedom 2025</div><div class="value">148/180</div></div>
+        <div class="stat"><div class="label">HDI 2023/24 *</div><div class="value">0.740 · 107/193</div></div>
+        <div class="stat"><div class="label">Tourist arrivals (Jan–Nov '25)</div><div class="value">10.7M (+47% YoY)</div></div>
+        <div class="stat"><div class="label">Tashkent population</div><div class="value">~3.0–3.1M</div></div>
+        <div class="stat"><div class="label">Median age</div><div class="value">~27–28 yrs</div></div>
+        <div class="stat"><div class="label">Foreign land ownership</div><div class="value">25 yr lease (50 for FIEs)</div></div>
+      </div>
+      <div class="footnote">* Human Development Index</div>
+    </div>
+  </article>
+</section>
+
+</div>
+<script>
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const panels = document.querySelectorAll('.panel');
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.t;
+      navBtns.forEach(b => b.classList.toggle('active', b === btn));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+      btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+    });
+  });
+</script>
+</body>
+</html>
